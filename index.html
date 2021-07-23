@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<script>
+    function insert(num) {
+        document.form.text.value = document.form.text.value + num
+    }
+
+    function equal() {
+        var exp = document.form.text.value;
+        if (exp) {
+            document.form.text.value = eval(exp);
+        }
+    }
+
+    function clean() {
+        document.form.text.value = "";
+    }
+
+    function back() {
+        var exp = document.form.text.value;
+        document.form.text.value = exp.substring(0, exp.length - 1);
+    }
+</script>
+
+<body style="background-image:linear-gradient(to right,lightblue,blue)">
+    <div class="div">
+        <form action="" method="post" name="form">
+            <div class="calculator">
+                <p class="cal">Calculator</p>
+                <input style="cursor:text" class="text" type="tel" name="text" id="value" value="" size="10">
+                <table>
+                    <tr>
+                        <td><input class="button" type="button" name="all-clear" value="C" onclick="clean()" /></td>
+                        <td><input class="button" type="button" name="clear" value="<" onclick="back()" /></td>
+                        <td><input class="button" type="button" name="digit" value="%" onclick="insert('%')" /></td>
+                        <td><input class="button" type="button" name="digit" value="/" onclick="insert('/')" /></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" name="digit" value="7" onclick="insert(7)" /></td>
+                        <td><input class="button" type="button" name="digit" value="8" onclick="insert(8)" /></td>
+                        <td><input class="button" type="button" name="digit" value="9" onclick="insert(9)" /></td>
+                        <td><input class="button" type="button" name="digit" value="x" onclick="insert('*')" /></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" name="digit" value="4" onclick="insert(4)" /></td>
+                        <td><input class="button" type="button" name="digit" value="5" onclick="insert(5)" /></td>
+                        <td><input class="button" type="button" name="digit" value="6" onclick="insert(6)" /></td>
+                        <td><input class="button" type="button" name="digit" value="-" onclick="insert('-')" /></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" name="digit" value="1" onclick="insert(1)" /></td>
+                        <td><input class="button" type="button" name="digit" value="2" onclick="insert(2)" /></td>
+                        <td><input class="button" type="button" name="digit" value="3" onclick="insert(3)" /></td>
+                        <td><input class="button" type="button" name="digit" value="+" onclick="insert('+')" /></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" name="digit" value="0" onclick="insert(0)" /></td>
+                        <td><input class="button" type="button" name="digit" value="," onclick="insert(',')" /></td>
+                        <td><input class="button" type="button" name="digit" value="." onclick="insert('.')" /></td>
+                        <td><input class="button" type="button" name="digit" value="=" onclick="equal()" /></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
